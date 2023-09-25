@@ -1,12 +1,12 @@
 {
   "version": "5",
-  "dialect": "sqlite",
+  "dialect": "pg",
   "entries": [
     {
       "idx": 0,
       "version": "5",
-      "when": 1695627347615,
-      "tag": "0000_smart_vampiro",
+      "when": 1695638198833,
+      "tag": "0000_glamorous_morgan_stark",
       "breakpoints": true
     }
   ]
