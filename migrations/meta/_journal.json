@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1695627347615,
+      "tag": "0000_smart_vampiro",
+      "breakpoints": true
+    }
+  ]
+}
