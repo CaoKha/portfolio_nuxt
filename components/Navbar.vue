@@ -52,9 +52,8 @@
 </template>
 
 <script lang="ts" setup>
-let open = useState('open', () => false)
+const open = useState<boolean>('toggle', () => false)
 function toggle() {
   open.value = !open.value
-
 } 
 </script>
