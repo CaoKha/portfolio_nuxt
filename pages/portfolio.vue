@@ -13,15 +13,15 @@
     </div>
     <div class=" flex justify-center px-5 sm:px-20">
       <div
-        class="p-5 bg-gradient-to-r from-white to-indigo-200 rounded-lg grid grid-cols-4 gap-x-3 gap-y-10 w-full sm:gap-x-10">
+        class="p-5 bg-[#f4eff8] rounded-lg grid grid-cols-4 gap-x-3 gap-y-10 w-full sm:gap-x-10">
         <div class="text-center font-bold text-lg">
-          <p>Projects</p>
+          <p class="underline">Projects</p>
         </div>
         <div class="text-center col-span-2 font-bold text-lg">
-          <p>Descriptions</p>
+          <p class="underline">Descriptions</p>
         </div>
         <div class="text-center font-bold text-lg">
-          <p>Sources</p>
+          <p class="underline">Sources</p>
         </div>
         <div class="pl-1 text-gray-500 font-bold">
           <p>Yogurt Sim</p>

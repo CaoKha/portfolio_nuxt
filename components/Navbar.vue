@@ -1,7 +1,7 @@
 <template>
   <el-affix>
     <div class="font-sans antialiased" id="app">
-      <nav class="flex items-center justify-between flex-wrap bg-indigo-300 p-6">
+      <nav class="flex items-center justify-between flex-wrap bg-[#212121] p-6">
         <div class="flex items-center flex-no-shrink text-white mr-6">
           <NuxtLink to="/">
           <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
