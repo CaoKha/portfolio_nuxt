@@ -11,7 +11,7 @@
         This is where I exhibit all my side projects!
       </p>
     </div>
-    <div class=" flex justify-center px-4 sm:px-20">
+    <div class=" flex justify-center px-5 sm:px-20">
       <div
         class="p-5 bg-gradient-to-r from-white to-indigo-200 rounded-lg grid grid-cols-4 gap-x-3 gap-y-10 w-full sm:gap-x-10">
         <div class="text-center font-bold text-lg">
@@ -24,7 +24,7 @@
           <p>Sources</p>
         </div>
         <div class="pl-1 text-gray-500 font-bold">
-          <p>Yogurt Simulator</p>
+          <p>Yogurt Sim</p>
         </div>
         <div class="pr-1 col-span-2">
           <p>A web application that simulates physics of a yogurt using WebAssembly (Rust) and Nuxt</p>
@@ -33,7 +33,7 @@
           <p>WIP</p>
         </div>
         <div class="pl-1 text-gray-500 font-bold">
-          <p>Tenisu Web Application</p>
+          <p>Tenisu Web App</p>
         </div>
         <div class="pl-1 col-span-2">
           <p>A single page application that can search for a tenis player from a list of tenis players. Created with React
