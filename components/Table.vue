@@ -40,10 +40,12 @@ defineProps({
       createdAt: Date;
     }>,
     required: true,
+    default: () => [],
   },
   duration: {
     type: Number,
     required: true,
+    default: () => 0
   }
 })
 

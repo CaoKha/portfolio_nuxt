@@ -3,22 +3,27 @@
     <div class="font-sans antialiased" id="app">
       <nav class="flex items-center justify-between flex-wrap bg-indigo-300 p-6">
         <div class="flex items-center flex-no-shrink text-white mr-6">
-          <!-- <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" -->
-          <!--   xmlns="http://www.w3.org/2000/svg"> -->
-          <!--   <path -->
-          <!--     d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" /> -->
-          <!-- </svg> -->
-          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
-              clip-rule="evenodd" />
+          <NuxtLink to="/">
+          <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="30px" height="30px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+            <g>
+              <path fill="#F9EBB2" d="M56,56H8v-1.07l12-6.855V32c0-7.496,4.492-15.586,12-21.992C39.508,16.414,44,24.504,44,32v16.074
+		l11.824,6.754c0.062,0.039,0.121,0.078,0.176,0.117V56z" />
+              <g>
+                <path fill="#394240" d="M60,48l-8-4.57c0-4.027,0-8.047,0-11.43c0-12-8-24-20-32C20,8,12,20,12,32c0,3.383,0,7.402,0,11.43L4,48
+			c-2.426,1.27-4,2.977-4,5.188V60c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4v-6.812C64,50.977,62.125,49.375,60,48z M56,56H8
+			v-1.07l12-6.855V32c0-7.496,4.492-15.586,12-21.992C39.508,16.414,44,24.504,44,32v16.074l11.824,6.754
+			c0.062,0.039,0.121,0.078,0.176,0.117V56z" />
+                <circle fill="#394240" cx="32" cy="28" r="4" />
+              </g>
+            </g>
           </svg>
+          </NuxtLink>
           <span class="font-semibold text-xl tracking-tight"></span>
         </div>
         <div class="block sm:hidden">
           <button @click="toggle"
-            class="flex items-center px-3 py-2 border rounded text-black border-black hover:text-white hover:border-white">
+            class="flex items-center px-3 py-2 border-2 rounded text-gray-500 border-gray-500 hover:text-white hover:border-white">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -26,19 +31,19 @@
           </button>
         </div>
         <div :class="open ? 'block' : 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
-          <div class="text-sm sm:flex-grow">
-            <a href="#responsive-header"
-              class="no-underline block mt-4 sm:inline-block sm:mt-0 text-black hover:text-white mr-4">
-              Docs
-            </a>
-            <a href="#responsive-header"
-              class="no-underline block mt-4 sm:inline-block sm:mt-0 text-black hover:text-white mr-4">
-              Examples
-            </a>
-            <a href="#responsive-header"
-              class="no-underline block mt-4 sm:inline-block sm:mt-0 text-black hover:text-white">
-              Blog
-            </a>
+          <div class="text-base font-bold sm:flex-grow">
+            <NuxtLink to="/portfolio"
+              class="no-underline block mt-4 text-right sm:inline-block sm:mt-0 sm:mr-4 text-gray-500 hover:text-white">
+              Portfolio
+            </NuxtLink>
+            <NuxtLink to="/projects"
+              class="no-underline block mt-4 text-right sm:inline-block sm:mt-0 sm:mr-4 text-gray-500 hover:text-white">
+              Projects
+            </NuxtLink>
+            <NuxtLink to="/blogs"
+              class="no-underline block mt-4 text-right sm:inline-block sm:mt-0 text-gray-500 hover:text-white">
+              Blogs
+            </NuxtLink>
           </div>
           <!-- <div> -->
           <!--   <a href="#" -->
