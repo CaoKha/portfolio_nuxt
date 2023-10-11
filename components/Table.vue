@@ -29,25 +29,15 @@
 
 <script lang="ts" setup>
 import ms from 'ms';
+import  {UserData}  from '@/types/UserData'
 
-defineProps({
-  users: {
-    type: Array<{
-      image: string;
-      id: number;
-      name: string;
-      email: string;
-      createdAt: Date;
-    }>,
-    required: true,
-    default: () => [],
-  },
-  duration: {
-    type: Number,
-    required: true,
-    default: () => 0
-  }
-})
+const {users, duration} = withDefaults(defineProps<{
+  users: UserData[];
+  duration: Number; 
+}>(), {
+    users: () => [],
+    duration: () => 0
+  })
 
 function timeAgo(timestamp: Date, timeOnly?: string) {
   if (!timestamp) return 'never'
