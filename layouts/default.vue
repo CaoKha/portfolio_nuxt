@@ -1,24 +1,33 @@
 <template>
   <div class="bg-white dark:bg-slate-900">
-    <div class="background-gradient-circle" ref="layout_body">
-      <Navbar />
+    <div class="background-gradient-circle" ref="layoutBody">
+      <NavBar />
       <slot />
     </div>
   </div>
 </template>
 
-<script setup>
-const layout_body = ref(null);
-const handleMouseMove = (e) => {
-  layout_body.value.style.backgroundPosition = `${e.pageX - 800}px  ${e.pageY - 800}px`;
+<script setup lang="ts">
+const layoutBody = useState<HTMLDivElement | null>('layoutBody', () => null);
+const handleMouseMove = (e: MouseEvent) => {
+  if (layoutBody.value) {
+    const rect = layoutBody.value.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+    const bgPosX = offsetX - rect.width / 2;
+    const bgPosY = offsetY - rect.height / 2;
+    layoutBody.value.style.backgroundPosition = `${bgPosX}px ${bgPosY}px`;
+  }
 };
 
 onMounted(() => {
-  layout_body.value.addEventListener('mousemove', handleMouseMove);
+  if (layoutBody.value)
+    layoutBody.value.addEventListener('mousemove', handleMouseMove);
 });
 
 onBeforeUnmount(() => {
-  layout_body.value.removeEventListener('mousemove', handleMouseMove);
+  if (layoutBody.value)
+    layoutBody.value.removeEventListener('mousemove', handleMouseMove);
 });
 </script>
 
