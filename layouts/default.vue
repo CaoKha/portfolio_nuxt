@@ -8,6 +8,7 @@
 </template>
 
 <script setup lang="ts">
+
 const layoutBody = useState<HTMLDivElement | null>('layoutBody', () => null);
 const handleMouseMove = (e: MouseEvent) => {
   if (layoutBody.value) {
@@ -33,6 +34,6 @@ onBeforeUnmount(() => {
 
 <style lang="postcss" scoped>
 .background-gradient-circle {
-  background-image: radial-gradient(circle, rgb(59 130 246 / 0.15), transparent 80%);
+  background-image: radial-gradient(circle closest-side, rgb(59 130 246 / 0.15), transparent 80%);
 }
 </style>

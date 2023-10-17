@@ -1,25 +1,20 @@
 <template>
-  <div class="min-h-screen p-6" >
+  <div class="min-h-screen p-6">
     <div class="lg:mx-auto lg:flex lg:justify-between lg:gap-4">
       <header
         class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/4 lg:flex-col lg:justify-between lg:pb-28 lg:pt-10">
         <div>
           <h1 class="text-4xl font-bold tracking-tight dark:text-slate-200 sm:text-5xl">Kha Nguyen</h1>
           <h2 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-xl"> Mechatronics Engineer </h2>
-          <p class="text-slate-400 mt-4 max-w-xs leading-normal"></p>
+          <p class="mt-4 max-w-xs leading-normal text-slate-400"></p>
           <nav class="nav hidden lg:block" aria-label="In-page jump links">
             <ul class="mt-16 w-max">
-              <li><a class="group flex items-center py-3" href="#about"><span
-                    class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-700 dark:group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span
-                    class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-200 group-focus-visible:text-slate-200">About</span></a>
-              </li>
-              <li><a class="group flex items-center py-3" href="#experience"><span
-                    class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-700 dark:group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span
-                    class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-200 group-focus-visible:text-slate-200">Experience</span></a>
-              </li>
-              <li><a class="group flex items-center py-3" href="#projects"><span
-                    class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-700 dark:group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span
-                    class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-200 group-focus-visible:text-slate-200">Projects</span></a>
+              <li v-for="header in headers">
+                <a class="group flex items-center py-3" :class="{ 'active': header === currentSection }" :key="header"
+                  :href="`#${header}`"><span
+                    class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all active:bg-slate-700 group-hover:w-16 group-hover:bg-slate-700 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none dark:group-hover:bg-slate-200"></span><span
+                    class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-700 group-focus-visible:text-slate-200 dark:group-hover:text-slate-200">{{
+                      header }}</span></a>
               </li>
             </ul>
           </nav>
@@ -42,13 +37,15 @@
               </svg></a></li>
         </ul>
       </header>
-      <main class="pt-24 lg:w-3/4 lg:pt-10">
-        <section id="about" class="introduction-section" aria-label="About me">
-          <div class="introduction-template">
-            <h2 class="introduction-title">About
+      <main class="pt-24 lg:w-3/4 lg:pt-10" ref="portfolio_body">
+        <section v-intersection-observer="[onIntersectionObserverAbout, { threshold: 1 }]" id="About"
+          class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
+          <div
+            class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-blue-500/10 px-6 py-5 backdrop-blur dark:bg-slate-900/75 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-700 dark:text-slate-200 lg:sr-only">About
             </h2>
           </div>
-          <div class="introduction-body">
+          <div class="text-base text-slate-700 dark:text-slate-200">
             <p class="mb-2">Hi, I studied mechatronics at Univeristy of Technologies of Compiegne (UTC) in France and I'm
               working
               on a graphical project.
@@ -58,36 +55,23 @@
             </p>
           </div>
         </section>
-        <section id="experience" class="menu-section" aria-label="Work experience">
-          <div class="menu-header-template">
-            <h2 class="menu-header-content">
+        <section v-intersection-observer="[onIntersectionObserverExperiences, { threshold: 1 }]" id="Experiences"
+          class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
+          <div
+            class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-blue-500/10 px-6 py-5 backdrop-blur dark:bg-slate-900/75 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-700 dark:text-slate-200 lg:sr-only">
               Experience
             </h2>
           </div>
           <div>
             <ol class="group/list">
-              <li class="mb-12">
-                <ExperienceBar :date="experiences.Allianz.date" :job="experiences.Allianz.job"
-                  :company="experiences.Allianz.company_name" :link="experiences.Allianz.link" :content="experiences.Allianz.content"
-                  :tech_stack="experiences.Allianz.tech_stack" />
-              </li>
-              <li class="mb-12">
-                <ExperienceBar :date="experiences.FFF.date" :job="experiences.FFF.job"
-                  :company="experiences.FFF.company_name" :link="experiences.FFF.link" :content="experiences.FFF.content"
-                  :tech_stack="experiences.FFF.tech_stack" />
-              </li>
-              <li class="mb-12">
-                <ExperienceBar :date="experiences.Fintricity.date" :job="experiences.Fintricity.job"
-                  :company="experiences.Fintricity.company_name" :link="experiences.Fintricity.link" :content="experiences.Fintricity.content"
-                  :tech_stack="experiences.Fintricity.tech_stack" />
-              </li>
-              <li class="mb-12">
-                <ExperienceBar :date="experiences.Trimble.date" :job="experiences.Trimble.job"
-                  :company="experiences.Trimble.company_name" :link="experiences.Trimble.link" :content="experiences.Trimble.content"
-                  :tech_stack="experiences.Trimble.tech_stack" />
+              <li class="mb-12" v-for="experience in experiences">
+                <ExperienceCard :date="experience.date" :job="experience.job" :company="experience.company_name"
+                  :link="experience.link" :content="experience.content" :tech_stack="experience.tech_stack" />
               </li>
             </ol>
-            <div class="mt-12"><a class="inline-flex items-center leading-tight font-semibold text-slate-500 dark:text-slate-200 group"
+            <div class="mt-12"><a
+                class="group inline-flex items-center font-semibold leading-tight text-slate-500 dark:text-slate-200"
                 aria-label="View Full Résumé" href="/pdf/resume.pdf" target="_blank"><span><span
                     class="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">View
                     Full<!-- --> </span><span class="whitespace-nowrap"><span
@@ -101,78 +85,144 @@
                     </svg></span></span></a></div>
           </div>
         </section>
-        <section id="projects" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-          aria-label="Selected projects">
+        <section v-intersection-observer="[onIntersectionObserverProjects, { threshold: 1 }]" id="Projects"
+          class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
           <div
-            class="menu-header-template">
-            <h2 class="menu-header-content">Projects</h2>
+            class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-blue-500/10 px-6 py-5 backdrop-blur dark:bg-slate-900/75 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-700 dark:text-slate-200 lg:sr-only">Projects
+            </h2>
           </div>
           <div>
             <ul class="group/list">
-              <li class="mb-12">
-                <ProjectBar :title="projects.SumoRobot.title" :link="projects.SumoRobot.link" :description="projects.SumoRobot.description" />
+              <li class="mb-12" v-for="project in projects">
+                <ProjectCard :title="project.title" :link="project.link" :description="project.description"
+                  :imgSrc="project.imgSrc" :tech_stack="project.tech_stack" />
               </li>
-          </ul>
-        </div>
-      </section>
-    </main>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
   </div>
-</div></template>
+</template>
 
-<script setup>
-const experiences = {
-  Allianz: {
+<script lang="ts" setup>
+import { vIntersectionObserver } from '@vueuse/components'
+
+const headers = [
+  'About',
+  'Experiences',
+  'Projects'
+]
+
+const experiences = [
+  {
     date: 'Sep 2023 — Present',
     job: 'Backend Engineer',
-    company_name: 'Allianz Trade',
+    company_name: 'Federation Francaise de Football',
     link: 'https://www.allianz-trade.fr/',
     content: 'Developed and refactor a web app selling insurance to customer. \
               Work with the DevOps team to engineer and improve current infrasturcture to a better one',
     tech_stack: ['React', 'Angular', 'NodeJS', 'HTML', 'CSS', 'Javascript', 'Typescript', 'Python', 'Django']
   },
-  FFF: {
+  {
     date: 'Sep 2021 — Sep 2023',
     job: 'Fullstack Engineer',
     company_name: 'Federation Francaise de Football',
-    link:'https://www.fff.fr/',
+    link: 'https://www.fff.fr/',
     content: 'Developed and maintained multiple applications and tools for internal FFF employees \
               such as payment app, event organizers app, document management app, etc',
     tech_stack: ['React', 'Angular', 'HTML', 'CSS', 'Python', 'FastAPI', 'Javascript', 'Typescript']
   },
-  Fintricity: {
+  {
     date: 'Sep 2020 — Mars 2021',
-    job: 'Machine Learning Engineer',
+    job: 'Deep Learning Engineer',
     company_name: 'Fintricity',
-    link:'https://www.fintricity.com/',
+    link: 'https://www.fintricity.com/',
     content: 'Researched and developed a Deep Learning Model for Weed Detection App. \
               The Deep Learning Model can differentiate different growth stage of the plant \
               Worked with a researcher to implement his solution into Amazon Web Service',
     tech_stack: ['Python', 'Numpy', 'FastAI', 'OpenCV', 'AWS']
   },
-  Trimble: {
+  {
     date: 'Mars 2019 — Sep 2019',
     job: 'Robotics Engineer',
     company_name: 'Trimble Inc',
-    link:'https://www.trimble.com/',
+    link: 'https://www.trimble.com/',
     content: 'Researched and developed a synchronization method between motion sensors and camera on a mobile robot. \
               Worked with a researcher to implement his solution onto navigation system of the company',
     tech_stack: ['C++', 'CMake', 'Boost', 'OpenCV', 'Python', 'FPGA']
-  },
-};
+  }
+];
 
-const projects = {
-  SumoRobot: {
+const projects = [
+  {
     title: 'Finite State Machine Mobile Robot',
     link: '/projects',
-    description: 'A robot that can push any object out of a ring using a luminosity sensor and infrared sensor. \
-                  Implementation of finite state machine methodology'
+    description: 'A robot that can push any object out of a using a luminosity sensor and infrared sensor. ring \
+                  Implementation of finite state machine methodology',
+    imgSrc: '/images/sumo_robot.png',
+    tech_stack: ['C', 'Arduino', 'Blender']
   },
-};
+];
 
+const portfolio_body = useState('portfolio_body', () => null)
+const currentSection = useState('currentSection', () => null as string | null)
+let timeout: any = null;
+let lastSeenSection: string | null = null;
 
+const handleIntersection = (sectionId: string) => {
+  if (timeout) clearTimeout(timeout)
 
+  // Prioritize the current section
+  lastSeenSection = sectionId
+
+  timeout = setTimeout(() => {
+    // Use lastSeenSection as the most prominent section
+    currentSection.value = lastSeenSection
+  }, 50) // Adjust the delay as needed
+}
+
+function onIntersectionObserverAbout([entry]: IntersectionObserverEntry[]) {
+  if (entry.isIntersecting === true) {
+    // console.log(entry)
+    handleIntersection('About')
+  }
+}
+function onIntersectionObserverExperiences([entry]: IntersectionObserverEntry[]) {
+  if (entry.isIntersecting === true) {
+    console.log(entry)
+    handleIntersection('Experiences')
+  }
+}
+function onIntersectionObserverProjects([entry]: IntersectionObserverEntry[]) {
+  if (entry.isIntersecting === true) {
+    // console.log(entry)
+    handleIntersection('Projects')
+  }
+}
 </script>
 
-<style lang="postcss" scoped>.background-gradient-circle {
-  background-image: radial-gradient(circle, rgb(59 130 246 / 0.15), transparent 80%);
-}</style>
+<style lang="postcss" scoped>
+.active .nav-indicator {
+    width: 4rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(51 65 85/var(--tw-bg-opacity));
+}
+
+.active .nav-text {
+    --tw-text-opacity: 1;
+    color: rgb(51 65 85/var(--tw-text-opacity));
+}
+
+:is(.dark .active .nav-indicator) {
+    width: 4rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(226 232 240/var(--tw-bg-opacity));
+}
+
+:is(.dark .active .nav-text) {
+    --tw-bg-opacity: 1;
+    color: rgb(226 232 240/var(--tw-text-opacity));
+}
+</style>
