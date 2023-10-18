@@ -1,5 +1,5 @@
 <template>
-  <main class="relative flex min-h-screen flex-col items-center justify-center py-10">
+  <main class="relative flex min-h-screen flex-col items-center justify-center p-2">
     <Table :users="usersStore.users" :duration="usersStore.duration" />
   </main>
 </template>

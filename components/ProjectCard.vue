@@ -29,7 +29,7 @@
       </ul>
     </div>
     <img alt="" width="607" height="471" loading="lazy" decoding="async" data-nimg="1"
-      class="aspect-auto rounded border-2 border-slate-200/10 pt-4 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1 sm:pt-0"
+      class="mt-4 aspect-auto rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:mt-0 sm:translate-y-1"
       style="color:transparent" :src="imgSrc">
   </div>
 </template>

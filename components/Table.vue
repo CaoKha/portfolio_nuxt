@@ -13,15 +13,17 @@
       </button>
     </div>
     <div>
-      <div v-for="user in users" :key="user.id" class="flex items-center justify-between py-3">
-        <div class="flex items-center space-x-4">
+      <div v-for="user in users" :key="user.id" class="flex items-center justify-between space-x-4 py-3">
+        <div class="flex justify-between space-x-4 overflow-auto">
           <img :src="user.image" :alt="user.name" :width="48" :height="48" class="rounded-full ring-1 ring-gray-900/5" />
           <div class="space-y-1">
             <p class="font-medium leading-none dark:text-slate-200">{{ user?.name }}</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{{ user?.email }}</p>
+            <p class="truncate text-sm text-gray-500 dark:text-gray-400">{{ user?.email }}</p>
           </div>
         </div>
-        <p class="text-sm text-gray-500 dark:text-slate-400">{{ timeAgo(user?.createdAt) }}</p>
+        <div class=" flex items-end">
+          <p class="text-sm text-gray-500 dark:text-slate-400">{{ timeAgo(user?.createdAt) }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -29,15 +31,15 @@
 
 <script lang="ts" setup>
 import ms from 'ms';
-import  {UserData}  from '@/types/UserData'
+import { UserData } from '@/types/UserData'
 
-const {users, duration} = withDefaults(defineProps<{
+const { users, duration } = withDefaults(defineProps<{
   users: UserData[];
-  duration: Number; 
+  duration: Number;
 }>(), {
-    users: () => [],
-    duration: () => 0
-  })
+  users: () => [],
+  duration: () => 0
+})
 
 function timeAgo(timestamp: Date, timeOnly?: string) {
   if (!timestamp) return 'never'
