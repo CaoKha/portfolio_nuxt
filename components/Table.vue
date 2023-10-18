@@ -12,7 +12,7 @@
         Refresh Page
       </button>
     </div>
-    <div class="divide-y divide-gray-900/5">
+    <div>
       <div v-for="user in users" :key="user.id" class="flex items-center justify-between py-3">
         <div class="flex items-center space-x-4">
           <img :src="user.image" :alt="user.name" :width="48" :height="48" class="rounded-full ring-1 ring-gray-900/5" />
