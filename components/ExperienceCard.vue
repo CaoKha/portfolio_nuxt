@@ -46,6 +46,5 @@ const { date, job, company, link, content, tech_stack } = defineProps<{
   content: string,
   tech_stack: Array<string>
 }>();
-
 </script>
 

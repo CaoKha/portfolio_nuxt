@@ -8,18 +8,10 @@
         <span class="text-xl font-semibold tracking-tight"></span>
       </div>
       <div class="flex w-auto flex-grow items-center justify-between">
-        <div class="flex-grow text-xl font-bold">
-          <NuxtLink to="/portfolio"
+        <div class="flex-grow text-lg font-bold lg:text-xl">
+          <NuxtLink v-for="navlink in navlinks" :to="navlink.link"
             class="mr-4 mt-0 inline-block text-right text-slate-500 no-underline hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
-            Portfolio
-          </NuxtLink>
-          <NuxtLink to="/projects"
-            class="mr-4 mt-0 inline-block text-right text-slate-500 no-underline hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
-            Projects
-          </NuxtLink>
-          <NuxtLink to="/blogs"
-            class="mt-0 inline-block text-right text-slate-500 no-underline hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
-            Blogs
+            {{ navlink.title }}
           </NuxtLink>
         </div>
         <div class="pr-1">
@@ -34,4 +26,10 @@
 </template>
 
 <script lang="ts" setup>
+const navlinks = [
+  { link: '/portfolio', title: 'Portfolio' },
+  { link: '/projects', title: 'Projects' },
+  { link: '/blogs', title: 'Blogs' },
+]
+
 </script>

@@ -8,28 +8,8 @@
 </template>
 
 <script setup lang="ts">
+const layoutBody = useMouseBackground();
 
-const layoutBody = useState<HTMLDivElement | null>('layoutBody', () => null);
-const handleMouseMove = (e: MouseEvent) => {
-  if (layoutBody.value) {
-    const rect = layoutBody.value.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left;
-    const offsetY = e.clientY - rect.top;
-    const bgPosX = offsetX - rect.width / 2;
-    const bgPosY = offsetY - rect.height / 2;
-    layoutBody.value.style.backgroundPosition = `${bgPosX}px ${bgPosY}px`;
-  }
-};
-
-onMounted(() => {
-  if (layoutBody.value)
-    layoutBody.value.addEventListener('mousemove', handleMouseMove);
-});
-
-onBeforeUnmount(() => {
-  if (layoutBody.value)
-    layoutBody.value.removeEventListener('mousemove', handleMouseMove);
-});
 </script>
 
 <style lang="postcss" scoped>

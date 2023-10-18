@@ -1,0 +1,33 @@
+# Exclude node_modules since we'll be installing dependencies in the Docker image
+node_modules
+
+# Exclude any pnpm cache or temporary files
+.pnpm-store
+.pnpm-workspace.yaml
+.pnpm-lock.yaml
+pnpmfile.js
+
+# Exclude any build artifacts
+dist
+.cache
+
+# Exclude development-specific files and directories
+.env*
+.nuxt
+.editorconfig
+.eslint*
+.prettierrc*
+babel.config.js
+jest.config.js
+test
+
+# Exclude version control system files and directories
+.git
+.gitignore
+
+# Exclude any logs or runtime data
+*.log*
+
+# Exclude Docker-specific files
+Dockerfile
+.dockerignore

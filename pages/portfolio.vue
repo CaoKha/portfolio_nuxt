@@ -5,7 +5,7 @@
         class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/4 lg:flex-col lg:justify-between lg:pb-28 lg:pt-10">
         <div>
           <h1 class="text-4xl font-bold tracking-tight dark:text-slate-200 sm:text-5xl">Kha Nguyen</h1>
-          <h2 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-xl"> Mechatronics Engineer </h2>
+          <h2 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-xl"> Software Engineer </h2>
           <p class="mt-4 max-w-xs leading-normal text-slate-400"></p>
           <nav class="nav hidden lg:block" aria-label="In-page jump links">
             <ul class="mt-16 w-max">
@@ -20,14 +20,15 @@
           </nav>
         </div>
         <ul class="ml-1 flex items-center" aria-label="Social media">
-          <li class="mr-5 text-xs"><a class="block hover:text-slate-200" href="https://github.com/CaoKha" target="_blank"
-              rel="noreferrer"><span class="sr-only">GitHub</span><svg xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+          <li class="mr-5 text-xs"><a class="block hover:text-slate-200 dark:text-slate-200 dark:hover:text-slate-500"
+              href="https://github.com/CaoKha" target="_blank" rel="noreferrer"><span class="sr-only">GitHub</span><svg
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-6 w-6"
+                aria-hidden="true">
                 <path
                   d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
                 </path>
               </svg></a></li>
-          <li class="mr-5 text-xs"><a class="block hover:text-slate-200"
+          <li class="mr-5 text-xs"><a class="block hover:text-slate-200 dark:text-slate-200 dark:hover:text-slate-500"
               href="https://www.linkedin.com/in/cao-kha-nguyen-11327a239/" target="_blank" rel="noreferrer"><span
                 class="sr-only">LinkedIn</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                 fill="currentColor" class="h-6 w-6" aria-hidden="true">
@@ -38,8 +39,8 @@
         </ul>
       </header>
       <main class="pt-24 lg:w-3/4 lg:pt-10" ref="portfolio_body">
-        <section v-intersection-observer="[onIntersectionObserverAbout, { threshold: 1 }]" id="About"
-          class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
+        <section v-intersection-observer="[onIntersectionObserver, { threshold: 1, root: portfolio_body }]"
+          id="About" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
           <div
             class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-blue-500/10 px-6 py-5 backdrop-blur dark:bg-slate-900/75 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
             <h2 class="text-sm font-bold uppercase tracking-widest text-slate-700 dark:text-slate-200 lg:sr-only">About
@@ -55,8 +56,9 @@
             </p>
           </div>
         </section>
-        <section v-intersection-observer="[onIntersectionObserverExperiences, { threshold: 1 }]" id="Experiences"
-          class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
+        <section
+          v-intersection-observer="[onIntersectionObserver, { threshold: [0.90, 1], root: portfolio_body }]"
+          id="Experiences" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
           <div
             class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-blue-500/10 px-6 py-5 backdrop-blur dark:bg-slate-900/75 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
             <h2 class="text-sm font-bold uppercase tracking-widest text-slate-700 dark:text-slate-200 lg:sr-only">
@@ -85,8 +87,8 @@
                     </svg></span></span></a></div>
           </div>
         </section>
-        <section v-intersection-observer="[onIntersectionObserverProjects, { threshold: 1 }]" id="Projects"
-          class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
+        <section v-intersection-observer="[onIntersectionObserver, { threshold: 1, root: portfolio_body }]"
+          id="Projects" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
           <div
             class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-blue-500/10 px-6 py-5 backdrop-blur dark:bg-slate-900/75 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
             <h2 class="text-sm font-bold uppercase tracking-widest text-slate-700 dark:text-slate-200 lg:sr-only">Projects
@@ -118,12 +120,12 @@ const headers = [
 const experiences = [
   {
     date: 'Sep 2023 — Present',
-    job: 'Backend Engineer',
-    company_name: 'Federation Francaise de Football',
-    link: 'https://www.allianz-trade.fr/',
-    content: 'Developed and refactor a web app selling insurance to customer. \
+    job: 'Frontend Software Engineer',
+    company_name: 'Qarnot Computing',
+    link: 'https://qarnot.com/en',
+    content: 'Developed a web app monitoring data from electrical raditor to customer. \
               Work with the DevOps team to engineer and improve current infrasturcture to a better one',
-    tech_stack: ['React', 'Angular', 'NodeJS', 'HTML', 'CSS', 'Javascript', 'Typescript', 'Python', 'Django']
+    tech_stack: ['Vue', 'Nuxt', 'NodeJS', 'HTML', 'CSS', 'Javascript', 'Typescript']
   },
   {
     date: 'Sep 2021 — Sep 2023',
@@ -132,7 +134,8 @@ const experiences = [
     link: 'https://www.fff.fr/',
     content: 'Developed and maintained multiple applications and tools for internal FFF employees \
               such as payment app, event organizers app, document management app, etc',
-    tech_stack: ['React', 'Angular', 'HTML', 'CSS', 'Python', 'FastAPI', 'Javascript', 'Typescript']
+    tech_stack: ['React', 'Angular', 'HTML', 'CSS', 'Python', 'FastAPI', 'Javascript', 'Typescript',
+      'PrimeNG', 'MaterialUI', 'Bootstrap', 'TailwindCSS', 'Traefik', 'Azure', 'MongoDB', 'Redis']
   },
   {
     date: 'Sep 2020 — Mars 2021',
@@ -168,61 +171,34 @@ const projects = [
 
 const portfolio_body = useState('portfolio_body', () => null)
 const currentSection = useState('currentSection', () => null as string | null)
-let timeout: any = null;
-let lastSeenSection: string | null = null;
 
-const handleIntersection = (sectionId: string) => {
-  if (timeout) clearTimeout(timeout)
-
-  // Prioritize the current section
-  lastSeenSection = sectionId
-
-  timeout = setTimeout(() => {
-    // Use lastSeenSection as the most prominent section
-    currentSection.value = lastSeenSection
-  }, 50) // Adjust the delay as needed
-}
-
-function onIntersectionObserverAbout([entry]: IntersectionObserverEntry[]) {
+function onIntersectionObserver([entry]: IntersectionObserverEntry[]) {
   if (entry.isIntersecting === true) {
-    // console.log(entry)
-    handleIntersection('About')
-  }
-}
-function onIntersectionObserverExperiences([entry]: IntersectionObserverEntry[]) {
-  if (entry.isIntersecting === true) {
-    console.log(entry)
-    handleIntersection('Experiences')
-  }
-}
-function onIntersectionObserverProjects([entry]: IntersectionObserverEntry[]) {
-  if (entry.isIntersecting === true) {
-    // console.log(entry)
-    handleIntersection('Projects')
+    currentSection.value = entry.target.id
   }
 }
 </script>
 
 <style lang="postcss" scoped>
 .active .nav-indicator {
-    width: 4rem;
-    --tw-bg-opacity: 1;
-    background-color: rgb(51 65 85/var(--tw-bg-opacity));
+  width: 4rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85/var(--tw-bg-opacity));
 }
 
 .active .nav-text {
-    --tw-text-opacity: 1;
-    color: rgb(51 65 85/var(--tw-text-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85/var(--tw-text-opacity));
 }
 
 :is(.dark .active .nav-indicator) {
-    width: 4rem;
-    --tw-bg-opacity: 1;
-    background-color: rgb(226 232 240/var(--tw-bg-opacity));
+  width: 4rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240/var(--tw-bg-opacity));
 }
 
 :is(.dark .active .nav-text) {
-    --tw-bg-opacity: 1;
-    color: rgb(226 232 240/var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  color: rgb(226 232 240/var(--tw-text-opacity));
 }
 </style>
