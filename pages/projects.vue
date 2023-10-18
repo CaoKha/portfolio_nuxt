@@ -54,14 +54,14 @@
               target="_blank"><span>STL File</span></a></button>
         </div>
         <div class="pt-10 lg:pt-0">
-          <img
+          <img class="aspect-auto" width="960" height="740"
             src="https://static.wixstatic.com/media/ee9a71_7c44bdd21b6447fab44ac622f119a848~mv2.png/v1/fill/w_960,h_740,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/ee9a71_7c44bdd21b6447fab44ac622f119a848~mv2.png" />
         </div>
       </div>
     </section>
 
-
-</main></template>
+  </main>
+</template>
 
 <script setup>
 </script>

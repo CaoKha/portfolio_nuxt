@@ -3,7 +3,7 @@
     <nav class="flex flex-wrap items-center justify-between p-2">
       <div class="flex-no-shrink ml-4 mr-6 mt-1 flex items-center text-white">
         <NuxtLink to="/">
-          <img src="/images/avatar.jpeg" alt="ava" class="w-10 rounded-full ring-1 ring-gray-900/5" />
+          <img src="/images/avatar.jpeg" alt="ava" width="40" height="40" class="aspect-auto w-10 rounded-full ring-1 ring-gray-900/5" />
         </NuxtLink>
         <span class="text-xl font-semibold tracking-tight"></span>
       </div>
