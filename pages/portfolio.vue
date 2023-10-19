@@ -57,7 +57,7 @@
           </div>
         </section>
         <section
-          v-intersection-observer="[onIntersectionObserver, { threshold: [0.90, 1], root: portfolio_body }]"
+          v-intersection-observer="[onIntersectionObserver, { threshold: [0.95, 1], root: portfolio_body }]"
           id="Experiences" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
           <div
             class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-blue-500/10 px-6 py-5 backdrop-blur dark:bg-slate-900/75 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
@@ -120,12 +120,11 @@ const headers = [
 const experiences = [
   {
     date: 'Sep 2023 — Present',
-    job: 'Frontend Software Engineer',
-    company_name: 'Qarnot Computing',
-    link: 'https://qarnot.com/en',
-    content: 'Developed a web app monitoring data from electrical raditor to customer. \
-              Work with the DevOps team to engineer and improve current infrasturcture to a better one',
-    tech_stack: ['Vue', 'Nuxt', 'NodeJS', 'HTML', 'CSS', 'Javascript', 'Typescript']
+    job: 'Backend Software Engineer',
+    company_name: 'Federation Francaise de Football',
+    link: 'https://www.fff.fr/',
+    content: 'Work with the DevOps team to engineer and improve current infrasturcture to a better one',
+    tech_stack: ['Python', 'FastAPI', 'NodeJS', 'HTML', 'CSS', 'Typescript']
   },
   {
     date: 'Sep 2021 — Sep 2023',
