@@ -6,12 +6,17 @@
 
 <script setup lang="ts">
 useHead({
-  title: 'Portfolio',
-  meta: [
-    { property: 'description', content: 'Kha Portfolio' }
-  ],
   htmlAttrs: {
     lang: 'en'
   }
+})
+
+useSeoMeta({
+  title: 'Portfolio',
+  ogTitle: 'Portfolio',
+  description: 'Kha Portfolio',
+  ogDescription: 'Kha Portfolio',
+  ogImage: 'https://nuxt-wasm.vercel.app/images/avatar.jpeg',
+  twitterCard: 'summary'
 })
 </script>
