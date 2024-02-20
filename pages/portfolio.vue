@@ -124,7 +124,7 @@ const experiences = [
     company_name: 'Poclain Hydraulics',
     link: 'https://poclain-hydraulics.com/',
     content: 'Automating data analysis processes of many legacy C/C++ projects. \
-    Creating automation Rust scripts and CLI tool, transforming legacy PLM documents into git history for better tracking system,
+    Creating automation Rust scripts and CLI tool, transforming legacy PLM documents into git history for better tracking system',
     tech_stack: ['Rust', 'Python', 'C', 'C++', 'Batch File', 'Polars', 'Makefile', 'Cmake']
   },
   {
