@@ -11,8 +11,8 @@ export const useConstants = () => {
       job: 'Embedded Software Engineer',
       company_name: 'Allianz Trade',
       link: 'https://www.allianz-trade.fr/',
-      content: 'Automating data analysis processes of many legacy C/C++ projects. \
-    Creating automation Rust scripts and CLI tool, transforming legacy PLM documents into git history for better tracking system',
+      content: 'automating data analysis processes of many legacy c/c++ projects. \
+    creating automation scripts and cli tool. Transforming legacy plm documents into git history for better tracking system',
       tech_stack: ['Rust', 'Python', 'C', 'C++', 'Batch File', 'Polars', 'Makefile', 'Cmake']
     },
     {
