@@ -120,11 +120,12 @@ const headers = [
 const experiences = [
   {
     date: 'Sep 2023 — Present',
-    job: 'Backend Software Engineer',
-    company_name: 'Federation Francaise de Football',
-    link: 'https://www.fff.fr/',
-    content: 'Work with the DevOps team to engineer and improve current infrasturcture to a better one',
-    tech_stack: ['Python', 'FastAPI', 'NodeJS', 'HTML', 'CSS', 'Typescript']
+    job: 'Embedded Software Engineer',
+    company_name: 'Poclain Hydraulics',
+    link: 'https://poclain-hydraulics.com/',
+    content: 'Automating data analysis processes of many legacy C/C++ projects. \
+    Creating automation Rust scripts and CLI tool, transforming legacy PLM documents into git history for better tracking system,
+    tech_stack: ['Rust', 'Python', 'C', 'C++', 'Batch File', 'Polars', 'Makefile', 'Cmake']
   },
   {
     date: 'Sep 2021 — Sep 2023',
