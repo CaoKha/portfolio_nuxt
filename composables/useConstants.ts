@@ -9,8 +9,8 @@ export const useConstants = () => {
     {
       date: 'Sep 2023 — Present',
       job: 'Embedded Software Engineer',
-      company_name: 'Poclain Hydraulics',
-      link: 'https://poclain-hydraulics.com/',
+      company_name: 'Allianz Trade',
+      link: 'https://www.allianz-trade.fr/',
       content: 'Automating data analysis processes of many legacy C/C++ projects. \
     Creating automation Rust scripts and CLI tool, transforming legacy PLM documents into git history for better tracking system',
       tech_stack: ['Rust', 'Python', 'C', 'C++', 'Batch File', 'Polars', 'Makefile', 'Cmake']
