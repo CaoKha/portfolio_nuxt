@@ -1,4 +1,4 @@
-export const useConstants = () => {
+export const useMyConstants = () => {
   const headers = [
     'About',
     'Experiences',
@@ -56,5 +56,16 @@ export const useConstants = () => {
     },
   ];
 
-  return { headers, experiences, projects }
+  const blogs = [
+    {
+      title: 'Testing Blog',
+      link: '/blogs/webgpu',
+      description: 'Blog Description',
+      imgSrc: '/images/journey.png',
+      tech_stack: ['C++', 'Python', 'Rust']
+    }
+  ]
+
+
+  return { headers, experiences, projects, blogs }
 };

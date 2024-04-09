@@ -22,7 +22,6 @@
       </div>
     </nav>
   </div>
-  <el-backtop :right="20" :bottom="20" />
 </template>
 
 <script lang="ts" setup>

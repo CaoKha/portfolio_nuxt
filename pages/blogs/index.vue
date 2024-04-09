@@ -8,9 +8,9 @@
       </div>
       <div>
         <ul>
-          <li class="mb-12 px-2" v-for="project in projects">
-            <ProjectCard :title="project.title" :link="project.link" :description="project.description"
-              :imgSrc="project.imgSrc" :tech_stack="project.tech_stack" />
+          <li class="mb-12 px-2" v-for="blog in blogs">
+            <ProjectCard :title="blog.title" :link="blog.link" :description="blog.description"
+              :imgSrc="blog.imgSrc" :tech_stack="blog.tech_stack" />
           </li>
         </ul>
       </div>
@@ -19,7 +19,7 @@
 </template>
   
 <script setup lang="ts">
-const { projects } = useMyConstants();
+const { blogs } = useMyConstants();
 </script>
   
 <style scoped></style>

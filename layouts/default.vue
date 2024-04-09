@@ -3,6 +3,8 @@
     <div class="background-gradient-circle" ref="layoutBody">
       <NavBar />
       <slot />
+
+      <el-backtop :right="20" :bottom="20" style="position: fixed; z-index: 999" />
     </div>
   </div>
 </template>

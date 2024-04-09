@@ -110,7 +110,7 @@
 <script lang="ts" setup>
 import { vIntersectionObserver } from '@vueuse/components'
 
-const {headers, experiences, projects} = useConstants();
+const {headers, experiences, projects} = useMyConstants();
 const portfolio_body = useState('portfolio_body', () => null)
 const currentSection = useState('currentSection', () => null as string | null)
 
