@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
 import ms from 'ms';
-import { UserData } from '@/types/UserData'
+import type { UserData } from '~/types/UserData'
 
 const { users, duration } = withDefaults(defineProps<{
   users: UserData[];

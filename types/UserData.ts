@@ -1,7 +1,9 @@
 export type UserData = {
   image: string;
-  id: number;
+  id?: number;
   name: string;
   email: string;
-  createdAt: Date;
+  role: string;
+  createdAt?: Date;
 };
+

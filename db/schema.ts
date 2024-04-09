@@ -1,4 +1,3 @@
-import { InferSelectModel, InferInsertModel } from "drizzle-orm";
 import { serial, pgTable, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
 
 export const usersTable = pgTable(
@@ -8,6 +7,7 @@ export const usersTable = pgTable(
     name: text("name").notNull(),
     email: text("email").notNull(),
     image: text("image").notNull(),
+    role: text("role").notNull(),
     createdAt: timestamp("createdAt").defaultNow().notNull(),
   },
   (users) => ({
@@ -15,5 +15,5 @@ export const usersTable = pgTable(
   }),
 );
 
-export type SelectUser = InferSelectModel<typeof usersTable>;
-export type InsertUser = InferInsertModel<typeof usersTable>;
+export type SelectUser = typeof usersTable.$inferSelect
+export type InsertUser = typeof usersTable.$inferInsert;
