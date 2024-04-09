@@ -41,7 +41,7 @@ const { users, duration } = withDefaults(defineProps<{
   duration: () => 0
 })
 
-function timeAgo(timestamp: Date, timeOnly?: string) {
+function timeAgo(timestamp: Date | undefined, timeOnly?: string) {
   if (!timestamp) return 'never'
   return `${ms(Date.now() - new Date(timestamp).getTime())}${timeOnly ? '' : ' ago'
     }`

@@ -9,7 +9,6 @@
           <p class="mt-4 max-w-xs leading-normal text-slate-400"></p>
           <nav class="nav hidden lg:block" aria-label="In-page jump links">
             <ul class="mt-16 w-max">
-              n
               <li v-for="header in headers">
                 <a class="group flex items-center py-3" :class="{ 'active': header === currentSection }" :key="header"
                   :href="`#${header}`"><span
@@ -120,7 +119,6 @@ function onIntersectionObserver([entry]: IntersectionObserverEntry[]) {
     currentSection.value = entry.target.id
   }
 }
-
 </script>
 
 <style lang="postcss" scoped>
