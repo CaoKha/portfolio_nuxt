@@ -16,7 +16,7 @@ useSeoMeta({
   ogTitle: 'Portfolio',
   description: 'Kha Portfolio',
   ogDescription: 'Kha Portfolio',
-  ogImage: 'https://nuxt-wasm.vercel.app/images/avatar.jpeg',
+  ogImage: 'https://nckportfolio.vercel.app/images/avatar.jpeg',
   twitterCard: 'summary'
 })
 </script>
