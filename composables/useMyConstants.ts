@@ -8,10 +8,10 @@ export const useMyConstants = () => {
   const experiences = [
     {
       date: 'Sep 2023 — Present',
-      job: 'Embedded Software Engineer',
+      job: 'Software Engineer',
       company_name: 'Allianz Trade',
       link: 'https://www.allianz-trade.fr/',
-      content: 'automating data analysis processes of many legacy c/c++ projects. \
+      content: 'Automating data analysis processes of many legacy c/c++ projects. \
     creating automation scripts and cli tool. Transforming legacy plm documents into git history for better tracking system',
       tech_stack: ['Rust', 'Python', 'C', 'C++', 'Batch File', 'Polars', 'Makefile', 'Cmake']
     },
